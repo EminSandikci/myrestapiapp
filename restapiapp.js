@@ -1,9 +1,8 @@
 const express = require('express')
 const app = express()
+const user = require('./routers/user')
 
-app.get('/',(req,res)=>{
-    res.send('ok.')
-})
+app.use(user)
 
 app.listen(3000,(err)=>{
     if(!err) console.log('listining 3000 port..')
