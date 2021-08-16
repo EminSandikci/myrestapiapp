@@ -1,12 +1,12 @@
 const express = require('express')
-const router = express.Router()
+const userRouter = express.Router()
 const { userMain, userSingin, userLogin } = require('../controllers/userController')
 const { authentication } = require('../middleware/authentication')
 
-router.get('/', authentication, userMain)
+userRouter.get('/', authentication, userMain)
 
-router.post('/singin', userSingin)
+userRouter.post('/singin', userSingin)
 
-router.post('/login', userLogin)
+userRouter.post('/login', userLogin)
 
-module.exports = { router }
+module.exports = { userRouter }
