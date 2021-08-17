@@ -4,7 +4,7 @@ const userMain = (req, res) => {
     res.send('user main')
 }
 
-const userSingin = (req, res) => {
+const userSingin = async (req, res) => {
     const newUser = new User({
         userName: 'Emin',
         userSurname: 'Sandikci',
@@ -12,11 +12,12 @@ const userSingin = (req, res) => {
         userMail: 'asd@asd.as'
     })
 
-    newUser.save().exec().then((data) => {
-        res.json(data)
-    }).catch((err) => {
-        res.json(err)
-    })
+    try {
+        const saveUser = await newUser.save()
+        res.json(saveUser)
+    } catch (error) {
+        res.json(error)
+    }
 }
 
 const userLogin = (req, res) => {
