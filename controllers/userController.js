@@ -5,22 +5,22 @@ const userMain = (req, res) => {
 }
 
 const userSingin = (req, res) => {
-    res.send('user singin')
-}
-
-const userLogin = (req, res) => {
     const newUser = new User({
-        userName:'Emin',
-        userSurname:'Sandikci',
-        userAge:'21',
-        userMail:'asd@asd.as'
+        userName: 'Emin',
+        userSurname: 'Sandikci',
+        userAge: '21',
+        userMail: 'asd@asd.as'
     })
 
     newUser.save().exec().then((data) => {
-        console.log('singin success..')
+        res.json(data)
+    }).catch((err) => {
+        res.json(err)
     })
+}
 
-    res.send('user login')
+const userLogin = (req, res) => {
+    res.send('ok')
 }
 
 module.exports = { userMain, userSingin, userLogin }
