@@ -14,9 +14,11 @@ const userSingin = async (req, res) => {
 
     try {
         const saveUser = await newUser.save()
-        res.json(saveUser)
+        console.log('ok..')
+        res.json({ message: "ok.." })
     } catch (error) {
-        res.json(error)
+        console.log('error..')
+        res.json({ message: "error.." })
     }
 }
 
