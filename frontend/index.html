@@ -7,9 +7,16 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script>
         async function singinFetch() {
-            await fetch("http://localhost:3000/singin", { method: 'POST' }).then((data) => {
+            await fetch("http://localhost:3000/singin", { method: 'POST' })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data)=>{
                 document.getElementById("message").innerHTML = JSON.stringify(data);
-            });
+            })
+            .catch((err)=>{
+                alert(err);
+            })
         }
     </script>
 </head>
