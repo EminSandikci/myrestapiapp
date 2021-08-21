@@ -4,34 +4,25 @@
 <head>
     <meta charset='utf-8'>
     <title>Client Page</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <script>
-        async function singinFetch() {
-            await fetch("http://localhost:3000/singin", { method: 'POST' })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data)=>{
-                document.getElementById("message").innerHTML = JSON.stringify(data);
-            })
-            .catch((err)=>{
-                alert(err);
-            })
-        }
-    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./javascript/main.js"></script>
 </head>
 
-<body style="background-color: darkslategray;color: dodgerblue;">
-    <p>
-    <h1>
-        <div id="message">Message This...</div>
-    </h1>
-    </p>
-    <p>
-    <h4>
-        <button onclick="singinFetch()">Send Singin</button>
-    </h4>
-    </p>
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>
+
+        </nav>
+    </header>
+    <div class="container">
+
+    </div>
+    <footer>
+
+    </footer>
 </body>
 
 </html>
